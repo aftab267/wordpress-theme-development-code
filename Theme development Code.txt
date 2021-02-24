@@ -1,0 +1,55 @@
+Theme development Code
+------------Class 1------------
+style.css
+screenshot.png
+header.php
+footer.php
+<?php  get_header();?>
+<?php  get_footer();?>
+<?php wp_head();?>
+<?php wp_footer();?>
+file functions.php
+
+function aftab_enqueue(){
+wp_enqueue_style('google-font','cdn url');
+
+
+wp_enqueue_style( 'Bootstrap-css', get_template_directory_uri() . '/bootstrap/example.css', array(), '1.0.0', all);
+wp_enqueue_style( 'Bootstrap-css', get_template_directory_uri() . '/bootstrap/example.css', array(), '1.0.0', all);
+wp_enqueue_style( 'style-css', get_stylesheet_uri());
+
+wp_enqueue_script( 'Bootstrap-js', get_template_directory_uri() . '/js/example.js', array('jquery'), '1.0.0', true);
+
+}
+add_action( 'wp_enqueue_scripts', 'aftab_enqueue' );
+
+--------for image----------------
+
+<?php get_template_directory_uri();?>
+
+--------------------Class 2---------------------
+
+<?php
+function aftab_setup_theme(){
+add_theme_support('title-tag');
+
+load_theme_textdomain('halim'.get_template_directory_uri().'/languages');
+
+register_nav_menu(array(
+'main-manu' => __('primary Menu','template_name')
+));
+
+}
+add_action('after_setup_theme','aftab_setup_theme');
+
+?>
+
+</ul> under
+<?php
+wp_nav_menu(array(
+'theme_location'=> 'main-menu',
+  'menu_class'=>'navbar-nav ml-auto' ));
+?>
+
+
+
