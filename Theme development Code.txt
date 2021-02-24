@@ -1,5 +1,6 @@
 Theme development Code
 ------------Class 1------------
+index.php
 style.css
 screenshot.png
 header.php
