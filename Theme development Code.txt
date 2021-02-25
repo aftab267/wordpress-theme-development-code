@@ -1,6 +1,5 @@
 Theme development Code
 ------------Class 1------------
-index.php
 style.css
 screenshot.png
 header.php
@@ -9,7 +8,17 @@ footer.php
 <?php  get_footer();?>
 <?php wp_head();?>
 <?php wp_footer();?>
+
 file functions.php
+add_theme_support('menues');
+add_theme_support('widgets');
+add_theme_support('custom-background');
+add_theme_support('custom-header');
+add_theme_support('post-thumbnails');
+<?php language_attribute(); ?>
+<?php bloginfo('charset');?>
+<?php bloginfo('title');?>
+<body <?php body_class?>>
 
 function aftab_enqueue(){
 wp_enqueue_style('google-font','cdn url');
@@ -51,6 +60,3 @@ wp_nav_menu(array(
 'theme_location'=> 'main-menu',
   'menu_class'=>'navbar-nav ml-auto' ));
 ?>
-
-
-
