@@ -34,6 +34,7 @@ wp_enqueue_script( 'Bootstrap-js', get_template_directory_uri() . '/js/example.j
 }
 add_action( 'wp_enqueue_scripts', 'aftab_enqueue' );
 <?php echo get_template_directory_uri()?>/
+<?php the_post_thumbnail(); ?>  ---for blog
 --------for image----------------
 
 <?php get_template_directory_uri();?>
